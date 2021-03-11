@@ -52,3 +52,11 @@ jobs:
 #          port: ${{ secrets.SSH_PORT }}
 #          user: ${{ secrets.SSH_USER }}
 #          key: ${{ secrets.SSH_KEY }}
+
+      - name: start on server
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: java -jar /opt/gh-actions-demo-1.0.0-SNAPSHOT.jar
+          host: 130.61.156.230
+          username: ubuntu
+          privateKey: ${{ secrets.ORAVM }}
